@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Case study: Production-Like Splunk Enterprise Security Detection Lab by Oluwaseun Ojimi.">
+  <title>Splunk ES Detection Lab | Oluwaseun Ojimi</title>
+  <link rel="stylesheet" href="../assets/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="brand" href="../index.html">OO</a>
+      <nav><a href="../index.html#projects">← Projects</a><a href="../index.html#contact">Contact</a></nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container narrow">
+        <p class="eyebrow">FLAGSHIP CASE STUDY</p>
+        <h1>Production-Like Splunk Enterprise Security Detection Lab</h1>
+        <p class="lede">
+          A lab architecture for demonstrating the complete security analytics lifecycle:
+          telemetry generation and collection, Splunk ingestion, CIM normalization,
+          Enterprise Security detections, Risk-Based Alerting, investigation, and response.
+        </p>
+        <div class="chips">
+          <span>Splunk Enterprise</span><span>Splunk ES</span><span>Indexer Cluster</span>
+          <span>Deployment Server</span><span>Heavy Forwarder</span><span>CIM</span>
+          <span>RBA</span><span>AWS CloudTrail</span><span>Linux auditd</span><span>LDAP</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section alt">
+      <div class="container narrow">
+        <p class="section-kicker">THE PROBLEM</p>
+        <h2>Detection engineering needs a system, not just SPL.</h2>
+        <p>
+          A search can return events and still fail as a production-quality detection if telemetry is incomplete,
+          field normalization is inconsistent, risk/notable actions are misconfigured, or analysts lack useful investigation context.
+          This lab was designed to exercise the whole pipeline rather than testing isolated searches.
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container narrow">
+        <p class="section-kicker">ARCHITECTURE</p>
+        <h2>Multi-tier lab design</h2>
+        <ul>
+          <li>Splunk Enterprise Security search head</li>
+          <li>Two-node indexer cluster</li>
+          <li>Cluster Manager / Deployment Server</li>
+          <li>Heavy Forwarder and Universal Forwarders</li>
+          <li>Linux and Windows telemetry</li>
+          <li>OpenLDAP identity/authentication source</li>
+          <li>AWS security telemetry including CloudTrail-oriented scenarios</li>
+          <li>Kubernetes/OpenShift-style monitoring scenarios</li>
+        </ul>
+        <p><strong>Portfolio rule:</strong> all screenshots, IP addresses, user identities, and configurations published here must come from the lab or be sanitized.</p>
+      </div>
+    </section>
+
+    <section class="section alt">
+      <div class="container narrow">
+        <p class="section-kicker">DETECTION LIFECYCLE</p>
+        <h2>Telemetry → CIM → Detection → RBA → Investigation</h2>
+        <ol>
+          <li><strong>Generate / collect telemetry.</strong> Reproduce realistic authentication, cloud, endpoint, identity, and infrastructure events.</li>
+          <li><strong>Normalize data.</strong> Validate timestamps, sourcetypes, field extractions, calculated fields, aliases, and CIM alignment.</li>
+          <li><strong>Create detections.</strong> Build concise SPL or data-model-based logic tied to a defined threat behavior.</li>
+          <li><strong>Add context.</strong> Populate entities, threat objects, annotations, urgency, drilldowns, and investigation pivots.</li>
+          <li><strong>Apply RBA where appropriate.</strong> Assign meaningful risk objects, risk scores, and modifiers rather than generating excessive standalone alerts.</li>
+          <li><strong>Validate end to end.</strong> Confirm the search, ES finding/notable behavior, risk events, analyst visibility, and false-positive controls.</li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container narrow">
+        <p class="section-kicker">EXAMPLE USE CASES</p>
+        <h2>Detection library built on top of the lab</h2>
+        <ul>
+          <li>Privileged IAM modification</li>
+          <li>Suspicious AWS AssumeRole activity</li>
+          <li>S3 object-access / exfiltration scenarios</li>
+          <li>CloudTrail StopLogging</li>
+          <li>Linux local-account creation or deletion</li>
+          <li>Linux authentication abuse</li>
+          <li>LDAP authentication monitoring</li>
+          <li>Windows authentication monitoring</li>
+          <li>Database privilege and authentication activity</li>
+          <li>Kubernetes/OpenShift suspicious workload activity</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section alt">
+      <div class="container narrow">
+        <p class="section-kicker">WHAT THIS DEMONSTRATES</p>
+        <h2>Skills a hiring team can actually inspect</h2>
+        <p>
+          The project demonstrates Splunk architecture, security data onboarding, CIM normalization,
+          detection engineering, Risk-Based Alerting, SPL optimization, identity integration,
+          troubleshooting, documentation, and security automation in one coherent environment.
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container narrow">
+        <p class="section-kicker">NEXT ITERATION</p>
+        <h2>Artifacts to add</h2>
+        <ul>
+          <li>Sanitized architecture diagram</li>
+          <li>Example event flow diagram</li>
+          <li>One complete detection with SPL, MITRE mapping, risk scoring, drilldowns, tuning, and validation results</li>
+          <li>Sample dashboard screenshots from the lab</li>
+          <li>Python event-generation example</li>
+          <li>Repository links for detection and automation code</li>
+        </ul>
+        <a class="button primary" href="../index.html#projects">Back to projects</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container"><p>© 2026 Oluwaseun Ojimi · Security Platform Engineering Portfolio</p></div>
+  </footer>
+</body>
+</html>
